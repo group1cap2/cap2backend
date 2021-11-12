@@ -5,7 +5,7 @@ const getAllPodcastsWithQuery = async(req, res) => {
     res.status(200);
     res.json(response.data.results);
   } else {
-    const response = await axios.get(`http://itunes.apple.com/search?term=all&media=podcast&limit=5`)
+    const response = await axios.get(`http://itunes.apple.com/search?term=all&media=podcast&limit=50`)
     res.status(200);
     res.json(response.data.results);
   }
