@@ -34,6 +34,42 @@ app.use("/podcasts", podcastRouter);
 const booksRouter = require("./routers/routes/books");
 app.use("/books", booksRouter);
 
+// Set Favorite //
+
+// Movies
+const moviesFavoriteRouter = require("./routers/routes/moviesFavorite");
+app.use("/setMovieFavorite", moviesFavoriteRouter);
+
+// Music
+const musicFavoriteRouter = require("./routers/routes/musicFavorite");
+app.use("/setMusicFavorite", musicFavoriteRouter);
+
+// Podcast
+const podcastsFavoriteRouter = require("./routers/routes/podcastsFavorite");
+app.use("/setPodcastFavorite", podcastsFavoriteRouter);
+
+// Books
+const booksFavoriteRouter = require("./routers/routes/booksFavorite");
+app.use("/setBookFavorite", booksFavoriteRouter);
+
+// Get Favorite //
+
+// Movies
+const getMoviesFavoriteRouter = require("./routers/routes/getMoviesFavorite");
+app.use("/getMoviesFavorite", getMoviesFavoriteRouter);
+
+// Music
+const getMusicFavoriteRouter = require("./routers/routes/getMusicFavorite");
+app.use("/getMusicFavorite", getMusicFavoriteRouter);
+
+// Podcast
+const getPodcastsFavoriteRouter = require("./routers/routes/getPodcastsFavorite");
+app.use("/getPodcastsFavorite", getPodcastsFavoriteRouter);
+
+// Books
+const getBooksFavoriteRouter = require("./routers/routes/getBooksFavorite");
+app.use("/getBooksFavorite", getBooksFavoriteRouter);
+
 // Start The App
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
