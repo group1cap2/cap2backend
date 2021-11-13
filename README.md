@@ -1,4 +1,4 @@
-# iTunes API Search
+# :musical_note: iTunes API Search
 
 ## Introduction
 
@@ -30,13 +30,11 @@ With this module you can make any search to iTunes API.
 	* entity
 	* attribute
 	* limit
-	* lang
-	* version
-	* explicit
 3. Get all result in Objects
 4. Fast and Safe
 
 ## Features
+* Responsive web design.
 * play/stop control over what's playing.
 * query to return a list of available movies/musics/podcasts/ebooks endpoints.
 
@@ -45,12 +43,9 @@ With this module you can make any search to iTunes API.
 * Express.js
 * iTunes search API
 * Postman
-
-
-
+* 
 ## Instalition
 
- 
  - Clone this reposity using the command -
 ```
 git clone https://github.com/group1cap2/cap2backend.git
