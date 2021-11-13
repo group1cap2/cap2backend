@@ -1,6 +1,6 @@
 const express = require("express");
 
-const getPodcastFavorite = require("../controllers/getPodcastFavorite");
+const getPodcastFavorite = require("../controllers/getPodcastsFavorite");
 
 const getPodcastFavoriteRouter = express.Router();
 
