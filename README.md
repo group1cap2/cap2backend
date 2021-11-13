@@ -1,4 +1,7 @@
 # iTunes API Search
+
+## Introduction
+
 Welcome to the iTunes API Search.
 
 
