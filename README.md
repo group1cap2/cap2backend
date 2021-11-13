@@ -37,9 +37,12 @@ With this module you can make any search to iTunes API.
 * play/stop control over what's playing.
 * query to return a list of available movies/musics/podcasts/ebooks endpoints.
 
+# Technologies used:
 
-  
-## Requirements
+* Express.js
+* iTunes search API
+* Postman
+
 
 
 ## Instalition
@@ -53,6 +56,15 @@ git clone https://github.com/group1cap2/cap2backend.git
 ```
 npm install
 ```
+```
+npm run dev
+```
+## Initialize node project
+Initialize node project using init command.
+After this, you will see a series of questions and select the default option for now.
+
+```npm init```
+
 ## Search API
 
 For searching in the iTunes API you simply include
@@ -64,7 +76,20 @@ Search parameters:
 -   _query_ - search string (name, author etc)
 -   _limit_ - maximum number or search results.
 
-
+```
+const getAllBooksWithQuery = async(req, res) => {
+const searchInput = req.query.search;
+    if (searchInput) {
+     const response = await axios.get(`http://itunes.apple.com/search?term=${searchInput}&media=ebook&limit=50`)
+      res.status(200);
+      res.json(response.data.results);
+    } else {
+      const response = await axios.get(`http://itunes.apple.com/search?term=all&media=ebook&limit=50`)
+      res.status(200);
+      res.json(response.data.results);
+    }
+  };
+```
 ## Security
 
 Helmet was installed and used in the server.js file so that the express file could
