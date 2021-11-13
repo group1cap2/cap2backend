@@ -4,91 +4,167 @@
 
 Welcome to the iTunes API Search.
 
-
 This is to allows you to type in a search term inside four different media search
-	 music videos, audiobooks and movies. Each of these can be navigated 
-	to by the icons on the navbar as well as the drop-down which is only available on the 
-	home-page.Either can be selected and the app will navigate to the selected media search.
-	Once a media search has been selected, type in a search term and see the results displayed.
-	To see a preview of the item, click on the label of the media, and the app will redirect
-	you to the song/ product listing on Apple's website.
-	Favorites can be added by clicking on the "Add a Favorite" button which is below each item
-	of the search result.
-	To view favorites, browse down to the bottom of the page.
-  
-With this module you can make any search to iTunes API.
+music videos, books and movies. Each of these can be navigated
+to by the icons on the navbar. Once a media search has been selected, type in a search term and see the results displayed.
+To see a preview of the item, click on the label of the media, and the app will show you the details.
+Favorites can be added by clicking on the heart icon button which is above each itemof the search result.
+To view favorites, click on the favorites from the navbar.
 
-1.	You can search for any iTunes media:
-	* movie
-	* podcast
-	* music
-	* ebook
-	
-2. Search for any attribute available on the iTunes API
-	* country
-	* media
-	* entity
-	* attribute
-	* limit
-3. Get all result in Objects
-4. Fast and Safe
+Hosted Link: https://group1-cap2backend.herokuapp.com/
 
-## Features
-* Responsive web design.
-* play/stop control over what's playing.
-* query to return a list of available movies/musics/podcasts/ebooks endpoints.
+While running locally: http://localhost:5000
 
-# Technologies used:
+### Technologies used:
 
-* Express.js
-* iTunes search API
-* Postman
-* 
-## Instalition
+- Express.js
+- iTunes search API
+- Postman
 
- - Clone this reposity using the command -
+## Getting Started
+
+### Installing Dependencies
+
+Run the following command on the main directory:
+
 ```
-git clone https://github.com/group1cap2/cap2backend.git
+npm i
 ```
- - Install required modules using -
-```
-npm install
-```
+
+#### Key Dependencies
+
+- [node](https://nodejs.org/en/) Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.
+
+### Running the server
+
+After installing the dependencies run to start the development server:
+
 ```
 npm run dev
 ```
-## Initialize node project
-Initialize node project using init command.
-After this, you will see a series of questions and select the default option for now.
 
-```npm init```
+## API Reference
 
-## Search API
+### Getting Started
 
-For searching in the iTunes API you simply include
-the search query in your request. The function will
-resolve with an object.
+Base URL: The backend app is hosted at the default https://group1-cap2backend.herokuapp.com/.
 
-Search parameters:
+### GET /movies
 
--   _query_ - search string (name, author etc)
--   _limit_ - maximum number or search results.
+#### General:
 
-```
-const getAllBooksWithQuery = async(req, res) => {
-const searchInput = req.query.search;
-    if (searchInput) {
-     const response = await axios.get(`http://itunes.apple.com/search?term=${searchInput}&media=ebook&limit=50`)
-      res.status(200);
-      res.json(response.data.results);
-    } else {
-      const response = await axios.get(`http://itunes.apple.com/search?term=all&media=ebook&limit=50`)
-      res.status(200);
-      res.json(response.data.results);
-    }
-  };
-```
-## Security
+Returns a list of movies objects.
 
-Helmet was installed and used in the server.js file so that the express file could
-be secured.
+#### Sample:
+
+curl https://group1-cap2backend.herokuapp.com/movies
+
+### GET /music
+
+#### General:
+
+Returns a list of music objects.
+
+#### Sample:
+
+curl https://group1-cap2backend.herokuapp.com/music
+
+### GET /podcasts
+
+#### General:
+
+Returns a list of podcasts objects.
+
+#### Sample:
+
+curl https://group1-cap2backend.herokuapp.com/podcasts
+
+### GET /books
+
+#### General:
+
+Returns a list of books objects.
+
+#### Sample:
+
+curl https://group1-cap2backend.herokuapp.com/books
+
+### GET /getMoviesFavorite
+
+#### General:
+
+Returns a list of favorite movies objects.
+
+#### Sample:
+
+curl https://group1-cap2backend.herokuapp.com/getMoviesFavorite
+
+### GET /getMusicFavorite
+
+#### General:
+
+Returns a list of favorite music objects.
+
+#### Sample:
+
+curl https://group1-cap2backend.herokuapp.com/getMusicFavorite
+
+### GET /getPodcastsFavorite
+
+#### General:
+
+Returns a list of favorite podcasts objects.
+
+#### Sample:
+
+curl https://group1-cap2backend.herokuapp.com/getPodcastsFavorite
+
+### GET /getBooksFavorite
+
+#### General:
+
+Returns a list of favorite books objects.
+
+#### Sample:
+
+curl https://group1-cap2backend.herokuapp.com/getBooksFavorite
+
+### PUT /setMovieFavorite
+
+#### General:
+
+Add the sent object to favorite or remove it depending request.
+
+#### Sample:
+
+curl https://group1-cap2backend.herokuapp.com/setMovieFavorite
+
+### PUT /setMusicFavorite
+
+#### General:
+
+Add the sent object to favorite or remove it depending request.
+
+#### Sample:
+
+curl https://group1-cap2backend.herokuapp.com/setMusicFavorite
+
+### PUT /setPodcastFavorite
+
+#### General:
+
+Add the sent object to favorite or remove it depending request.
+
+#### Sample:
+
+curl https://group1-cap2backend.herokuapp.com/setPodcastFavorite
+
+### PUT /setBookFavorite
+
+#### General:
+
+Add the sent object to favorite or remove it depending request.
+
+#### Sample:
+
+curl https://group1-cap2backend.herokuapp.com/setBookFavorite
